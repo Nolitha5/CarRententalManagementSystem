@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light;
+  --ink: #142a24;
+  --muted: #52665e;
+  --line: #d9e3dc;
+  --paper: #f5f7f2;
+  --accent: #d4ee77;
+  --green: #1a4736;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #398b68;
+  outline-offset: 3px;
+}
+.wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.site-header { background: var(--ink); color: white; }
+.header-inner, nav, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-inner { min-height: 72px; }
+.brand { font-size: 1.2rem; font-weight: 900; letter-spacing: .045em; text-decoration: none; white-space: nowrap; }
+.brand span { display: block; color: var(--accent); font-size: .72rem; letter-spacing: .15em; }
+nav a { text-decoration: none; font-weight: 600; }
+nav a:hover, footer a:hover { text-decoration: underline; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { background: #e1f59d; }
+.button.small { min-height: 40px; padding: 8px 15px; }
+.hero {
+  display: grid;
+  align-items: center;
+  min-height: 465px;
+  padding-block: 58px;
+  color: white;
+  background: linear-gradient(90deg, #0d251ff5, #0d251fbe 38%, #0d251f16 100%), url("/assets/hero.jpg") center 56% / cover;
+}
+.eyebrow { margin: 0 0 10px; color: var(--green); font-size: .875rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.hero .eyebrow, .booking-section .eyebrow { color: var(--accent); }
+h1, h2, h3, p { overflow-wrap: break-word; }
+h1, h2, h3 { margin: 0; }
+h1, h2 { letter-spacing: -.055em; line-height: 1; }
+h1 { font-size: clamp(3.3rem, 7vw, 6rem); }
+h2 { font-size: clamp(2.3rem, 5vw, 3.5rem); }
+h3 { font-size: 1.45rem; letter-spacing: -.035em; }
+p { line-height: 1.6; }
+.hero-copy { max-width: 380px; margin: 18px 0 24px; color: #f1f6ed; }
+.fleet { padding-block: 54px 72px; }
+.filters { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-top: 24px; }
+label { display: grid; gap: 7px; min-width: 0; color: var(--ink); font-size: .875rem; font-weight: 700; }
+input, select {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid #b9c9bf;
+  border-radius: 6px;
+  background-color: white;
+  color: var(--ink);
+  font-size: 1rem;
+}
+select {
+  appearance: none;
+  padding-right: 34px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: right 17px center, right 11px center;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+.results { margin: 16px 0 12px; font-size: .875rem; }
+.muted { color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 1.65; object-fit: cover; background: #d9e3dc; }
+.card-body { padding: 18px; }
+.card-meta, .card-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.card-meta { margin-bottom: 8px; font-size: .875rem; }
+.status { padding: 4px 8px; border-radius: 4px; background: #edf4e5; color: #205238; font-weight: 700; }
+.status.unavailable { background: #f1eeeb; color: #665243; }
+.specs { margin: 6px 0 15px; }
+.card-bottom { border-top: 1px solid var(--line); padding-top: 14px; }
+.rate strong { font-size: 1.35rem; }
+.card-bottom .button { color: white; background: var(--green); }
+.card-bottom .button:hover { background: #28634b; }
+.card-bottom .button:disabled { background: #ecefea; color: #52665e; cursor: default; }
+.booking-section { padding-block: 62px; background: var(--green); color: white; }
+.booking-layout { display: grid; grid-template-columns: 1fr 1.35fr; gap: 42px; }
+
+form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; gap: 16px; padding: 24px; border-radius: 12px; background: white; }
+.full { grid-column: 1 / -1; }
+.confirmation { margin: 0; padding: 12px; border-radius: 6px; background: #edf4e5; color: var(--ink); }
+footer { padding-block: 35px; background: var(--ink); color: white; }
+footer p { margin: 6px 0 0; color: #d3e3d6; }
+@media (max-width: 850px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .booking-layout { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 580px) {
+  .wrap { width: calc(100% - 32px); }
+  .header-inner, nav { gap: 12px; }
+  .brand { font-size: .98rem; }
+  .brand span { font-size: .65rem; }
+  nav a { font-size: .875rem; }
+  nav .small { padding-inline: 8px; }
+  .hero { min-height: 410px; background-position: 60% center; }
+  .filters { grid-template-columns: 1fr 1fr; }
+  .filters label:first-child { grid-column: 1 / -1; }
+  .cards, form { grid-template-columns: 1fr; }
+  form { padding: 16px; }
+  .footer-inner { flex-direction: column; align-items: start; gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+
+.button:disabled { opacity: .65; cursor: default; }
+.operator { padding-block: 30px 60px; }
+.operator h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin-bottom: 28px; }
+.operator-login { max-width: 430px; }
+.operator-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+.operator-card { border: 1px solid var(--line); border-radius: 12px; padding: 20px; background: white; }
+.operator-card .status { text-transform: capitalize; }
+.operator-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.reference { font-size: .875rem; color: var(--muted); }
+.secondary { background: var(--paper); border: 1px solid var(--line); }
+footer a { overflow-wrap: anywhere; }
